@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 6712392925780302620}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &666917736021754231
 MonoBehaviour:
@@ -48,6 +48,7 @@ MonoBehaviour:
   PrefabToSpawn: {fileID: 6212853832239163814, guid: 6d00312b1fc54af44b209fb9f10f1031, type: 3}
   SpawnerTemplate: {fileID: 11400000, guid: 23678f4cc0c8fb44187b6e1aec544885, type: 2}
   SpawnVisualizer: {fileID: 6148974457694317941}
+  Game: {fileID: 0}
 --- !u!1 &8361930510175053742
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 6, y: 1}
+  m_Size: {x: 3, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

@@ -30,5 +30,23 @@ namespace Pestcal
             maxHealthPoints = template.BaseHealthPoints;
             currentHealthPoints = template.BaseHealthPoints;
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if(other.GetComponent<BulletScript>() || other.GetComponent<LaserScript>())
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        public void SetSpeed(float speed)
+        {
+            currentSpeed = speed;
+        }
+
+        public void IncreaseSpeed(float multiplier)
+        {
+            currentSpeed *= multiplier;
+        }
     }
 }

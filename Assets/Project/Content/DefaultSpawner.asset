@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: DefaultSpawner
   m_EditorClassIdentifier: 
   VarianceInSpawnRate: 0
-  SpawnWidthInUnits: 8
+  SpawnWidthInUnits: 5
   UnitSize: 16
