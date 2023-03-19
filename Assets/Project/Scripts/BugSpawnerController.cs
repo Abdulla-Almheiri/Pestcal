@@ -16,6 +16,8 @@ namespace Pestcal
         private float _baseSpawnRate = 0.4f;
         private float _spawnCounter = 1f;
 
+        private bool _isPaused = false;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -43,7 +45,7 @@ namespace Pestcal
             SpawnVisualizer.SetWidthByUnits(_spawnWidthInUnits);
             _spawnCounter = 1f / _baseSpawnRate;
 
-            Debug.Log(_spawnWidthInUnits);
+            //Debug.Log(_spawnWidthInUnits);
         }
         public void StartSpawning(float rate = 1f)
         {
@@ -52,18 +54,24 @@ namespace Pestcal
 
         private void SpawnPrefabAtPoint()
         {
+            if(_isPaused == true)
+            {
+                return;
+            }
+
             var spawn = Instantiate(PrefabToSpawn, transform);
             var spawnPoint = new Vector2(Random.Range(-_spawnWidthInUnits / 2f, _spawnWidthInUnits / 2), 0f);
 
             spawn.transform.localPosition = spawnPoint;
             spawn.GetComponent<BugController>().IncreaseSpeed(1 + (Game.DifficultyLevel / 10f));
+            spawn.transform.SetParent(Game.BugContainer.transform);
             IncreaseSpawnRate();
             
         }
 
-        public void PauseSpawning()
+        public void SetPauseState(bool value)
         {
-
+            _isPaused = value;
         }
 
         private void ProcessSpawning()

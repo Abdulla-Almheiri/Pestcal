@@ -7,11 +7,11 @@ namespace Pestcal
     public class BulletScript : MonoBehaviour
     {
         public float Speed = 5f;
-
+        private float _speedMultiplier = 1f;
         // Start is called before the first frame update
         void Start()
         {
-            Destroy(gameObject, 15f);
+            Destroy(gameObject, 8f);
         }
 
         // Update is called once per frame
@@ -27,7 +27,12 @@ namespace Pestcal
         }
         private void ProcessMovement()
         {
-            transform.localPosition += new Vector3(0f, Time.deltaTime * Speed *-1, 0f);
+            transform.localPosition += new Vector3(0f, Time.deltaTime * Speed *-1 * _speedMultiplier, 0f);
+        }
+
+        public void SetSpeedMultiplier(float value)
+        {
+            _speedMultiplier = value;
         }
     }
 }

@@ -27,7 +27,7 @@ namespace Pestcal
 
         private void OnMouseEnter()
         {
-            Debug.Log("Mouse on");
+            //Debug.Log("Mouse on");
         }
     }
 }
